@@ -1,0 +1,92 @@
+<!-- Sidebar content -->
+<style>
+    .logo {
+        display: flex;
+        /* 使用flex布局 */
+        align-items: center;
+        /* 垂直居中对齐子元素 */
+        justify-content: space-between;
+        /* 水平分布子元素，图片靠左，文字靠右 */
+    }
+
+    .circle-avatar {
+        width: 50px;
+        /* 设置你想要的圆形头像的直径 */
+        height: 50px;
+        /* 设置高度与宽度相同，以保持圆形 */
+        border-radius: 50%;
+        /* 设置为50%来创建圆形 */
+        overflow: hidden;
+        /* 隐藏超出圆形边框的图片部分 */
+
+    }
+
+    .logo-text {
+        font-size: 20px;
+        /* 放大文字，根据需要调整字体大小 */
+        /* flex布局会自动处理水平对齐，通过justify-content: space-between;已经实现了文字靠右 */
+    }
+
+    .logo::after {
+        content: "";
+        display: table;
+        clear: both;
+        /* 清除浮动，确保容器包含浮动元素 */
+    }
+
+    .circle-avatar img {
+        width: 100%;
+        /* 图片宽度设置为容器宽度，以保持比例 */
+        height: auto;
+        /* 图片高度自动调整以保持比例 */
+
+    }
+
+    /*log off按钮*/
+    .log-off {
+        background-color: #ff4d4d;
+        /* 设置醒目的背景颜色，例如红色 */
+        color: white;
+        /* 设置字体颜色为白色，确保文字可读性 */
+        text-align: center;
+        /* 文字居中对齐 */
+        padding: 10px 0;
+        /* 增加上下的内边距 */
+        margin-top: 10px;
+        /* 与上方元素的间隔 */
+        border-radius: 5px;
+        /* 轻微的圆角边缘 */
+        font-weight: bold;
+        /* 加粗字体 */
+        /* 可以添加 :hover 伪类来改善鼠标悬停时的视觉效果 */
+    }
+
+    .log-off a {
+        color: inherit;
+        /* 使链接的颜色与父元素相同 */
+        text-decoration: none;
+        /* 去除下划线 */
+        display: block;
+        /* 让链接填满整个 .log-off 容器 */
+    }
+</style>
+<!-- Sidebar content -->
+<div class="logo">
+    <div class="circle-avatar">
+        <img src="/a_img/user_avatar.jpg" alt="Logo Icon">
+    </div>
+    <span id = "logo-text" class="logo-text"></span>
+</div>
+
+<nav class="menu">
+    <ul>
+        <li><a href="/user/html/personal_information_display.html">Personal Information</a></li> <!-- 添加active类 -->
+        <li class="active"><a href="/user/html/body_information_display.html">Body Information</a></li>
+        <li><a href="/user/html/password_main_page.html">Password Zone</a></li>
+        <li><a href="/user/html/ticket_history.html">Ticket history</a></li>
+        <li><a href="/user/html/Voucher.html">Voucher</a></li>
+    </ul>
+    <div class="menu-item log-off">
+        <a href="logout-url">Log Out</a> <!-- 将 href 的值设置为实际的登出脚本或页面 -->
+    </div>
+</nav>

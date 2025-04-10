@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ming.mapper.CommunityDao">
+    <select id="findInfo" resultType="com.ming.entity.CommunityEntity">
+        select a.*, c.*, b.community_id 'like'
+        from tb_community a
+                 left join tb_community_like b
+                           on a.id = b.community_id
+                               and b.user_name = #{userName}
+                 left join (select community_id, count(community_id) likeCount
+                            from tb_community_like
+                            group by community_id) c
+                           on c.community_id = a.id
+        where type = #{type}
+    </select>
+</mapper>

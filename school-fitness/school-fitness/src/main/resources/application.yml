@@ -1,0 +1,28 @@
+server:
+  port: 9012
+spring:
+  application:
+    name: localhost_3306
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/school_fitness?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: password
+
+  # 日期格式化
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  #mvc:
+    #view:
+      #prefix: /
+      #suffix: .html
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+logging:
+  file:
+    name: school.log
+  level:
+    com.baomidou.mybatisplus: DEBUG
+    com.ming.mapper: debug
